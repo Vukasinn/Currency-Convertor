@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Currency Convertor</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="css/styles.css"/>
+
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+	
+	<div class="container">
+		<h1 class="text-center heading">CURRENCY CONVERTOR</h1>
+
+		<div class="inputs">
+		
+				<select class="options">
+					<option value="EUR">EUR</option>
+					<option value="USD">USD</option>				
+					<option value="RSD">RSD</option>
+				</select>
+
+			<input type="number" name="first" class="firstInput" options="EUR,USD,RSD"></input>
+				<img src="images/swap.svg" alt="Currency Swap" class="swap" />
+
+				<select class="options">
+					<option value="RSD">RSD</option>
+					<option value="USD">USD</option>				
+					<option value="EUR">EUR</option>
+				</select>
+
+			<input type="number" name="second" class="secondInput"></input>
+
+
+		</div>
+
+		<button type="button" class="btn btn-info reset">Reset</button>
+
+	</div>
+
+
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
