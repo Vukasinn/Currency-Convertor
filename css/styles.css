@@ -52,25 +52,15 @@ body{
     justify-content: center;
     position: relative;
     left: 42%;
-    box-shadow: 4px 4px 0px black;
 }
 
-.reset:hover{
-	box-shadow: 1px 1px 0px black;
-	cursor: pointer;
-	transition: all 0.5s;
+.red{
+	color: red;
+	font-weight: bold;
 }
 
-.Usd{
-	display: none;
+@media only screen and (max-width: 500px){
+	body{
+		background-color: black;
+	}
 }
-
-.Din{
-	display: none;
-}
-
-.Eur{
-	display: none;
-}
-
-

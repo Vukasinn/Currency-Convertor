@@ -39,8 +39,37 @@ var changeCurrency = function (event) {
         $("#options2").append(option);    
     }
 }
+
 changeCurrency();
 $('#options1').on('change', changeCurrency);
+
+var changeCurrency2 = function (event) {
+    var cash = ['RSD', 'EUR', 'USD'];
+    $("#options1").empty();   
+    var currency;
+    if(event){
+        currency = $(this).val().toUpperCase();
+    } else{
+        currency = 'EUR';
+    }
+    
+    if(cash.includes(currency)){
+        var index = cash.indexOf(currency);
+        cash.splice(index, 1);
+    }
+    for(var i = 0; i <= 2; i++){
+        var option = $("<option>");
+            option.attr({
+                "value":cash[i],
+                "class":cash[i]
+            });
+            option.html(cash[i]);
+        $("#options1").append(option);    
+    }
+}
+
+changeCurrency();
+$('#options2').on('change', changeCurrency2);
 
 $.ajax({
     url:'https://api.kursna-lista.info/b7b80a59415046c33449b6a2a96bd4d8/kursna_lista',
@@ -77,22 +106,13 @@ let switchCurrency = () => {
 }
 
 
-// let populate = (s1,s2) => {
-// 	var s1 = document.getElementById('options1');
-// 	var s2 = document.getElementById('options2');
-// 	s2.innerHTML = "";
-// 	if(s1.value === "EUR"){
-// 		s2.innerHTML = $('.options2').html("<select><option>RSD</option><option>USD</option>");
-// 	}else if(s1.value === "RSD"){
-// 		let change2 = $('.options2').html("<select><option>EUR</option><option>USD</option>");
-// 	}else if(s1.value === "USD"){
-// 		let change3 = $('.options2').html("<select><option>EUR</option><option>RSD</option>");
-// 	}
-// 	for(let option in optionArray){
-// 		var pair = optionArray[option].split("|");
-// 		var newOption = document.createElement("option");
-// 		newOption.value = pair[0];
-// 		newOption.innerHTML = pair[1];
-// 		s2.options.add(newOption);
-// 	}
-// }
+
+var checkerBaybe = () => {
+	var input = $('.firstInput').val();
+	input = parseInt(input);
+	console.log(typeof input);
+	var noVal = $('.firstInput');
+	if(typeof input !== 'number'){
+		$(noVal).addClass('red');
+	}
+}
