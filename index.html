@@ -19,13 +19,13 @@
 
 		<div class="inputs">
 		
-				<select class="options1" id="options1" onchange="populate('options1','options2')">
+				<select class="options1" id="options1">
 					<option value="eur" class="Euros">EUR</option>
 					<option value="rsd" class="Dinars">RSD</option>
 					<option value="usd" class="Dollars">USD</option>
 				</select>
 
-			<input type="number" name="first" class="firstInput" oninput="sayHello()"></input>
+			<input type="text" name="first" class="firstInput"></input>
 				<img src="images/swap.svg" alt="Currency Swap" class="swap" onclick="switchCurrency()" />
 
 				<select class="options2" id="options2">
@@ -34,7 +34,7 @@
 					<option value="usd" class="Dollars">USD</option>
 				</select>
 
-			<input type="number" name="second" class="secondInput"></input>
+			<input type="text" name="second" class="secondInput"></input>
 
 
 		</div>
