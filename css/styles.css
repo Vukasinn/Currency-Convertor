@@ -59,8 +59,31 @@ body{
 	font-weight: bold;
 }
 
-@media only screen and (max-width: 500px){
-	body{
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.heading{
+		margin-top: 15%;
+		font-size: 120px;
+		font-weight: 400;
+		width: 100%;
+	}
+
+	.firstInput,.secondInput{
+		
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (max-width : 321px) {
+	
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+body{
 		background-color: black;
 	}
 }
