@@ -116,7 +116,7 @@ $.ajax({
 		 option2 = checker2.options[checker2.selectedIndex].value.toUpperCase();
 			console.log(option2);
 		});
-	$('.options').change(function(){
+	$('.options').on('change',function(){
 			if(option == "EUR" && option2 == "RSD"){
 				$('.firstInput').keyup(function(){
 				   console.log(data.result);
@@ -139,7 +139,47 @@ $.ajax({
 				   console.log(dollarValue);
 				   console.log(secondValue);
 				});
-			}
+			}else if(option == "EUR" && option2 == "USD"){
+				$('.firstInput').keyup(function(){
+					console.log(data.result);
+					let dollars = $('.firstInput').val();
+					let euros = dollars * (119.2134 / data.result.usd.sre);
+					document.getElementById('secondInput').value = euros;
+				    console.log(dollars);
+				    console.log(euros);
+				});
+			}else if (option == "RSD" && option2 == "EUR") {
+					$('.firstInput').keyup(function(){
+					   console.log(data.result);
+					   let firstValue = $('.firstInput').val();
+					   let euroValue = firstValue / data.result.eur.sre;
+					   euroValue.toFixed(2);
+					   let secondValue = $('.secondInput').value;
+					   document.getElementById('secondInput').value = euroValue;
+					   console.log(euroValue);
+					   console.log(secondValue);
+				});
+			}else if (option == "RSD" && option2 == "USD") {
+				$('.firstInput').keyup(function(){
+				   console.log(data.result);
+				   let firstValue = $('.firstInput').val();
+				   let dollarValue = firstValue / data.result.usd.sre;
+				   dollarValue.toFixed(2);
+				   let secondValue = $('.secondInput').value;
+				   document.getElementById('secondInput').value = dollarValue;
+				   console.log(dollarValue);
+				   console.log(secondValue);
+				});
+			}else if (option == "USD" && option2 == "EUR") {
+				$('.firstInput').keyup(function(){
+					console.log(data.result);
+					let euros = $('.firstInput').val();
+					let dollars = euros * (data.result.usd.sre / 119.2134);
+					document.getElementById('secondInput').value = dollars;
+				    console.log(dollars);
+				    console.log(euros);
+				});
+			};
 		})
 	})
 
@@ -163,15 +203,17 @@ $.ajax({
 	
 
 
-let switchCurrency = () => {
-	let temp = document.getElementById('options1').value;
-	document.querySelector('#options1').value = document.querySelector('#options2').value;
-	document.querySelector('#options2').value = temp;
-
+$('.swap').click(function(){
+	let firstSlctVal = document.querySelector('#options1').value.toUpperCase();
+	let secondSlctVal = document.querySelector('#options2').value.toUpperCase();
+	document.querySelector("#options2").value = firstSlctVal;
+	document.querySelector("#options1").value = secondSlctVal; 
+	console.log(firstSlctVal);
+	console.log(secondSlctVal);
 	let temp2 = document.querySelector('.firstInput').value;
 	document.querySelector('.firstInput').value = document.querySelector('.secondInput').value;
 	document.querySelector('.secondInput').value = temp2;
-}
+});
 
 
 
