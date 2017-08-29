@@ -1,8 +1,3 @@
-
-
-
- 	
- 
 // let rotate = () => {
 // 	$('.swap').css({
 // 		 transform  : 'rotate(360deg)',
@@ -76,23 +71,7 @@ var changeCurrency2 = function (event) {
 
 changeCurrency();
 $('#options2').on('change', changeCurrency2);
-
-// var firstLeft = $('.Euros1').val().toUpperCase();
-
-// var secondLeft = $('.Dinars1').val().toUpperCase();
-
-// var thirdLeft = $('.Dollars1').val().toUpperCase();
-
-// var firstRight = $('.Euros2').val().toUpperCase();
-
-// var secondRight = $('.Dinars2').val().toUpperCase();
-
-// var thirdRight = $('.Dollars2').val().toUpperCase();
-
-
-// let selectOne = $('.Euros1').val();
-// 	console.log(selectOne);
-
+// Declaring them so i have no scope problems later.
 let checker;
 let option;
 let checker2;
@@ -182,22 +161,20 @@ $.ajax({
     console.log(err);
 })
 
+// Reset Button Is Not Working.
 
 
 
 
 
 
-// let getRates = (from,to) => {
-// 	let rates = document.createElement('rates');
-// 	rates.setAttribute('src','https://api.kursna-lista.info/b7b80a59415046c33449b6a2a96bd4d8/kursna_lista');
-// 	document.body.appendChild(rates);
-// }
+
+
 
 
 	
 
-
+// Swap Button Has Some Odd Behaviour.
 $('.swap').click(function(){
 	let firstSlctVal = document.querySelector('#options1').value.toUpperCase();
 	let secondSlctVal = document.querySelector('#options2').value.toUpperCase();
@@ -211,14 +188,4 @@ $('.swap').click(function(){
 });
 
 
-
-// var checkerBaybe = () => {
-// 	var input = $('.firstInput').val();
-// 	input = parseInt(input);
-// 	console.log(typeof input);
-// 	var noVal = $('.firstInput');
-// 	if(typeof input !== 'number'){
-// 		$(noVal).addClass('red');
-// 	}
-// }
 
